@@ -28,6 +28,9 @@ namespace ConsoleApps
                     case "13":
                         ProblemThirteen();
                         break;
+                    case "14":
+                        ProblemFourteen();
+                        break;
                     case "q":
                     case "Q":
                         return;
@@ -45,7 +48,7 @@ namespace ConsoleApps
             Console.WriteLine("[11] Largest product in a grid");
             Console.WriteLine("[12] Highly divisible triangular number");
             Console.WriteLine("[13] Large sum");
-            
+            Console.WriteLine("[14] Longest Collatz sequence");
 
             Console.WriteLine("[q] Quit");
 
@@ -114,6 +117,15 @@ namespace ConsoleApps
             var firstTenDigits = thirteen.LargeSum();
 
             Console.WriteLine($"First ten digits of sum: {firstTenDigits}");
+            Console.WriteLine();
+        }
+
+        private static void ProblemFourteen()
+        {
+            var fourteen = new Fourteen();
+            var longestCollatzSequence = fourteen.CollatzSequence();
+
+            Console.WriteLine($"Longest Collatz sequence: {longestCollatzSequence}");
             Console.WriteLine();
         }
 
