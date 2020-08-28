@@ -25,6 +25,9 @@ namespace ConsoleApps
                     case "12":
                         ProblemTwelve();
                         break;
+                    case "13":
+                        ProblemThirteen();
+                        break;
                     case "q":
                     case "Q":
                         return;
@@ -41,8 +44,12 @@ namespace ConsoleApps
             Console.WriteLine("[10] Summation of primes");
             Console.WriteLine("[11] Largest product in a grid");
             Console.WriteLine("[12] Highly divisible triangular number");
+            Console.WriteLine("[13] Large sum");
+            
 
             Console.WriteLine("[q] Quit");
+
+            //Console.WriteLine("[] ");
         }
 
         #region Helpers
@@ -98,6 +105,15 @@ namespace ConsoleApps
             var highestDivisibleTriangularNumber = twelve.DivisibleTriangularNumber();
 
             Console.WriteLine($"Highest divisible triangular number: {highestDivisibleTriangularNumber}");
+            Console.WriteLine();
+        }
+
+        private static void ProblemThirteen()
+        {
+            var thirteen = new Thirteen();
+            var firstTenDigits = thirteen.LargeSum();
+
+            Console.WriteLine($"First ten digits of sum: {firstTenDigits}");
             Console.WriteLine();
         }
 
