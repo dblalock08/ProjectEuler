@@ -5,34 +5,31 @@ namespace ConsoleApps
 {
     class Program
     {
-        private static int _selection = 0;
+        private static string _selection = string.Empty;
 
         static void Main(string[] args)
         {
-            while (_selection <= 1)
+            while (true)
             {
+                switch (_selection)
+                {
+                    case "3":
+                        ProblemThree();
+                        break;
+                    case "10":
+                        ProblemTen();
+                        break;
+                    case "11":
+                        ProblemEleven();
+                        break;
+                    case "q":
+                    case "Q":
+                        return;
+                }
+
                 ResetSelection();
                 _selection = GetSelection();
             }
-
-            switch (_selection)
-            {
-                case 3:
-                    ProblemThree();
-                    break;
-                case 10:
-                    ProblemTen();
-                    break;
-                case 11:
-                    ProblemEleven();
-                    break;
-                default:
-                    ResetSelection();
-                    break;
-            }
-
-            // Wait for input
-            Console.ReadLine();
         }
 
         #region Helpers
@@ -45,19 +42,19 @@ namespace ConsoleApps
 
         private static void PrintOptions()
         {
-            Console.WriteLine("[3] Highest Prime Factor of 60,085,1475,143");
-            Console.WriteLine("[10] Sum of all primes below 2,000,000");
+            Console.WriteLine("[3] Largest prime factor");
+            Console.WriteLine("[10] Summation of primes");
+            Console.WriteLine("[11] Largest product in a grid");
+
+            Console.WriteLine("[q] Quit");
         }
 
-        private static int GetSelection()
+        private static string GetSelection()
         {
-            Console.Write("Number: ");
+            Console.Write("Selection: ");
             var inputLine = Console.ReadLine();
 
-            if (int.TryParse(inputLine, out var selection))
-                return selection;
-
-            return 0;
+            return inputLine;
         }
         #endregion
 
@@ -68,6 +65,7 @@ namespace ConsoleApps
             var highestPrime = three.HighestPrimeFactor(600851475143);
 
             Console.WriteLine($"Highest Prime: {highestPrime}");
+            Console.ReadLine();
         }
 
         private static void ProblemTen()
@@ -78,6 +76,7 @@ namespace ConsoleApps
             long primeSum = ten.SumOfPrimes(num);
 
             Console.WriteLine($"Sum of all prime numbers less than {num}: {primeSum}");
+            Console.ReadLine();
         }
 
         private static void ProblemEleven()
@@ -86,6 +85,7 @@ namespace ConsoleApps
             var greatestProduct = eleven.GreatestProduct();
 
             Console.WriteLine($"Greatest product of four adjacent numbers: {greatestProduct}");
+            Console.ReadLine();
         }
 
         #endregion

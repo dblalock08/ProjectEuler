@@ -7,6 +7,7 @@ namespace ConsoleApps.Solutions
     public class Eleven
     {
         private readonly int[,] _grid;
+        private const int GridSize = 20;
 
         public Eleven()
         {
@@ -62,15 +63,15 @@ namespace ConsoleApps.Solutions
             long product = 0;
 
             // For each row
-            for (int row = 0; row < _grid.Length - 1; row++)
+            for (int row = 0; row < GridSize - 1; row++)
             {
                 // Check each group of four
-                for (int col = 0; col < _grid.Length - 4; col++)
+                for (int col = 0; col < GridSize - 4; col++)
                 {
-                    long chunkProduct = _grid[col, row] * 
-                                        _grid[col + 1, row] * 
-                                        _grid[col + 2, row] *
-                                        _grid[col + 3, row];
+                    long chunkProduct = _grid[row, col] * 
+                                        _grid[row, col + 1] * 
+                                        _grid[row, col + 2] *
+                                        _grid[row, col + 3];
 
                     if (chunkProduct > product)
                         product = chunkProduct;
@@ -87,15 +88,15 @@ namespace ConsoleApps.Solutions
             long product = 0;
 
             // For each column
-            for (int col = 0; col < _grid.Length - 1; col++)
+            for (int col = 0; col < GridSize - 1; col++)
             {
                 // Check each group of four
-                for (int row = 0; row < _grid.Length - 4; row++)
+                for (int row = 0; row < GridSize - 4; row++)
                 {
-                    long chunkProduct = _grid[col, row] *
-                                        _grid[col, row + 1] *
-                                        _grid[col, row + 2] *
-                                        _grid[col, row + 3];
+                    long chunkProduct = _grid[row, col] *
+                                        _grid[row + 1, col] *
+                                        _grid[row + 2, col] *
+                                        _grid[row + 3, col];
 
                     if (chunkProduct > product)
                         product = chunkProduct;
@@ -112,15 +113,15 @@ namespace ConsoleApps.Solutions
             long product = 0;
 
             // Starting at the top left corner
-            for (int col = 0; col < _grid.Length - 4; col++)
+            for (int row = 0; row < GridSize - 4; row++)
             {
                 // Check each group of four
-                for (int row = 0; row < _grid.Length - 4; row++)
+                for (int col = 0; col < GridSize - 4; col++)
                 {
-                    long chunkProduct = _grid[col, row] *
-                                        _grid[col + 1, row + 1] *
-                                        _grid[col + 2, row + 2] *
-                                        _grid[col + 3, row + 3];
+                    long chunkProduct = _grid[row, col] *
+                                        _grid[row + 1, col + 1] *
+                                        _grid[row + 2, col + 2] *
+                                        _grid[row + 3, col + 3];
 
                     if (chunkProduct > product)
                         product = chunkProduct;
@@ -137,15 +138,15 @@ namespace ConsoleApps.Solutions
             long product = 0;
 
             // Starting at column 4, top row
-            for (int col = 3; col < _grid.Length; col++)
+            for (int row = 0; row < GridSize - 4; row++)
             {
                 // Check each group of four
-                for (int row = 0; row < _grid.Length - 4; row++)
+                for (int col = 3; col < GridSize; col++)
                 {
-                    long chunkProduct = _grid[col, row] *
-                                        _grid[col - 1, row - 1] *
-                                        _grid[col - 2, row - 2] *
-                                        _grid[col - 3, row - 3];
+                    long chunkProduct = _grid[row, col] *
+                                        _grid[row + 1, col - 1] *
+                                        _grid[row + 2, col - 2] *
+                                        _grid[row + 3, col - 3];
 
                     if (chunkProduct > product)
                         product = chunkProduct;
