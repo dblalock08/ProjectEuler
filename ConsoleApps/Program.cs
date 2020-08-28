@@ -22,22 +22,17 @@ namespace ConsoleApps
                     case "11":
                         ProblemEleven();
                         break;
+                    case "12":
+                        ProblemTwelve();
+                        break;
                     case "q":
                     case "Q":
                         return;
                 }
 
-                ResetSelection();
+                PrintOptions();
                 _selection = GetSelection();
             }
-        }
-
-        #region Helpers
-
-        private static void ResetSelection()
-        {
-            Console.Clear();
-            PrintOptions();
         }
 
         private static void PrintOptions()
@@ -45,14 +40,23 @@ namespace ConsoleApps
             Console.WriteLine("[3] Largest prime factor");
             Console.WriteLine("[10] Summation of primes");
             Console.WriteLine("[11] Largest product in a grid");
+            Console.WriteLine("[12] Highly divisible triangular number");
 
             Console.WriteLine("[q] Quit");
+        }
+
+        #region Helpers
+        private static void ResetSelection()
+        {
+            Console.Clear();
+            PrintOptions();
         }
 
         private static string GetSelection()
         {
             Console.Write("Selection: ");
             var inputLine = Console.ReadLine();
+            Console.WriteLine();
 
             return inputLine;
         }
@@ -65,7 +69,7 @@ namespace ConsoleApps
             var highestPrime = three.HighestPrimeFactor(600851475143);
 
             Console.WriteLine($"Highest Prime: {highestPrime}");
-            Console.ReadLine();
+            Console.WriteLine();
         }
 
         private static void ProblemTen()
@@ -76,7 +80,7 @@ namespace ConsoleApps
             long primeSum = ten.SumOfPrimes(num);
 
             Console.WriteLine($"Sum of all prime numbers less than {num}: {primeSum}");
-            Console.ReadLine();
+            Console.WriteLine();
         }
 
         private static void ProblemEleven()
@@ -85,7 +89,16 @@ namespace ConsoleApps
             var greatestProduct = eleven.GreatestProduct();
 
             Console.WriteLine($"Greatest product of four adjacent numbers: {greatestProduct}");
-            Console.ReadLine();
+            Console.WriteLine();
+        }
+
+        private static void ProblemTwelve()
+        {
+            var twelve = new Twelve();
+            var highestDivisibleTriangularNumber = twelve.DivisibleTriangularNumber();
+
+            Console.WriteLine($"Highest divisible triangular number: {highestDivisibleTriangularNumber}");
+            Console.WriteLine();
         }
 
         #endregion
