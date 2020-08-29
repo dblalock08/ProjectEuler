@@ -37,6 +37,9 @@ namespace ConsoleApps
                     case "16":
                         ProblemSixteen();
                         break;
+                    case "17":
+                        ProblemSeventeen();
+                        break;
                     case "q":
                     case "Q":
                         return;
@@ -57,6 +60,8 @@ namespace ConsoleApps
             Console.WriteLine("[14] Longest Collatz sequence");
             //Console.WriteLine("[15] Lattice paths");
             Console.WriteLine("[16] Power digit sum");
+            Console.WriteLine("[17] Number letter counts");
+
 
             Console.WriteLine("[q] Quit");
 
@@ -152,6 +157,15 @@ namespace ConsoleApps
             var digitSum = sixteen.PowerDigitSum();
 
             Console.WriteLine($"Sum of the digits of 2^1000: {digitSum}");
+            Console.WriteLine();
+        }
+
+        private static void ProblemSeventeen()
+        {
+            var seventeen = new Seventeen();
+            var count = seventeen.NumberLetterCount();
+
+            Console.WriteLine($"Number of letters in the numbers 1 to 1000 when written out: {count}");
             Console.WriteLine();
         }
 
