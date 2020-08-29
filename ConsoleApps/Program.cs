@@ -1,5 +1,6 @@
 ﻿using System;
 using ConsoleApps.Solutions;
+using ConsoleApps.Solutions._15;
 
 namespace ConsoleApps
 {
@@ -126,6 +127,15 @@ namespace ConsoleApps
             var longestCollatzSequence = fourteen.CollatzSequence();
 
             Console.WriteLine($"Longest Collatz sequence: {longestCollatzSequence}");
+            Console.WriteLine();
+        }
+
+        private static ProblemFifteen()
+        {
+            var fifteen = new Fifteen();
+            var pathCount = fifteen.LatticePaths();
+
+            Console.WriteLine($"Number of routes through 20x20 grid: {pathCount}");
             Console.WriteLine();
         }
 
