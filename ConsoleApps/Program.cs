@@ -138,6 +138,16 @@ namespace ConsoleApps
             Console.WriteLine($"Number of routes through 20x20 grid: {pathCount}");
             Console.WriteLine();
         }
+
+       private static void ProblemSixteen()
+        {
+            var sixteen = new Sixteen();
+            var digitSum = sixteen.PowerDigitSum();
+
+            Console.WriteLine($"Sum of the digits of 2^1000: {digitSum}");
+            Console.WriteLine();
+        }
+
         #endregion
     }
 }
