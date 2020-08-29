@@ -130,7 +130,7 @@ namespace ConsoleApps
             Console.WriteLine();
         }
 
-        private static ProblemFifteen()
+        private static void ProblemFifteen()
         {
             var fifteen = new Fifteen();
             var pathCount = fifteen.LatticePaths();
@@ -138,7 +138,6 @@ namespace ConsoleApps
             Console.WriteLine($"Number of routes through 20x20 grid: {pathCount}");
             Console.WriteLine();
         }
-
         #endregion
     }
 }
