@@ -1,6 +1,5 @@
 ﻿using System;
 using ConsoleApps.Solutions;
-using ConsoleApps.Solutions._15;
 
 namespace ConsoleApps
 {
@@ -32,6 +31,12 @@ namespace ConsoleApps
                     case "14":
                         ProblemFourteen();
                         break;
+                    case "15":
+                        //ProblemFifteen();
+                        break;
+                    case "16":
+                        ProblemSixteen();
+                        break;
                     case "q":
                     case "Q":
                         return;
@@ -50,6 +55,8 @@ namespace ConsoleApps
             Console.WriteLine("[12] Highly divisible triangular number");
             Console.WriteLine("[13] Large sum");
             Console.WriteLine("[14] Longest Collatz sequence");
+            //Console.WriteLine("[15] Lattice paths");
+            Console.WriteLine("[16] Power digit sum");
 
             Console.WriteLine("[q] Quit");
 
